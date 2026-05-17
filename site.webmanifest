@@ -7,14 +7,19 @@
     "theme_color": "#111111",
     "icons": [
         {
-            "src": "/favicon.svg",
+            "src": "/assets/brand/favicon-64.png",
             "sizes": "64x64",
-            "type": "image/svg+xml"
+            "type": "image/png"
         },
         {
-            "src": "/apple-touch-icon.svg",
+            "src": "/assets/brand/apple-touch-icon.png",
             "sizes": "180x180",
-            "type": "image/svg+xml"
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/brand/stail-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ]
 }
