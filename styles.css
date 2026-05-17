@@ -56,8 +56,8 @@ a {
 
 .brand img {
     display: block;
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
 }
 
@@ -129,8 +129,8 @@ h1 {
 }
 
 .hero-logo {
-    width: min(300px, 70vw);
-    margin-bottom: 24px;
+    width: min(310px, 72vw);
+    margin: 0 0 24px;
 }
 
 .hero-logo img {
