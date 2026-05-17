@@ -69,6 +69,10 @@ a {
     flex-wrap: wrap;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .main-nav a,
 .site-footer nav a {
     color: rgba(255, 255, 255, 0.74);
@@ -531,6 +535,7 @@ h3 {
     }
 
     .site-header {
+        position: sticky;
         align-items: center;
         gap: 14px;
         min-height: 68px;
@@ -542,23 +547,63 @@ h3 {
         height: 44px;
     }
 
-    .main-nav {
-        justify-content: flex-end;
-        gap: 12px;
-        max-width: calc(100vw - 84px);
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        scrollbar-width: none;
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: transparent;
+        color: var(--white);
+        cursor: pointer;
     }
 
-    .main-nav::-webkit-scrollbar {
-        display: none;
+    .menu-toggle span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: currentColor;
+        transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .site-header.nav-open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .site-header.nav-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .site-header.nav-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: grid;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(248, 246, 241, 0.14);
+        background: rgba(17, 17, 17, 0.98);
+        transition: max-height 220ms ease;
+    }
+
+    .site-header.nav-open .main-nav {
+        max-height: 320px;
     }
 
     .main-nav a {
-        flex: 0 0 auto;
-        font-size: 0.78rem;
-        white-space: nowrap;
+        padding: 15px 20px;
+        border-top: 1px solid rgba(248, 246, 241, 0.1);
+        font-size: 0.9rem;
     }
 
     .hero {
@@ -646,10 +691,6 @@ h3 {
 }
 
 @media (max-width: 420px) {
-    .main-nav {
-        max-width: calc(100vw - 76px);
-    }
-
     .hero-logo {
         width: min(220px, 70vw);
     }
