@@ -89,14 +89,14 @@ a {
 
 .hero {
     display: grid;
-    gap: 44px;
-    min-height: calc(94vh - 73px);
+    gap: 54px;
+    min-height: calc(88vh - 73px);
     align-items: center;
-    padding: 72px 0 56px;
+    padding: 46px 0 54px;
 }
 
 .hero-copy {
-    max-width: 680px;
+    max-width: 720px;
 }
 
 .eyebrow {
@@ -129,8 +129,8 @@ h1 {
 }
 
 .hero-logo {
-    width: min(360px, 78vw);
-    margin-bottom: 18px;
+    width: min(300px, 70vw);
+    margin-bottom: 24px;
 }
 
 .hero-logo img {
@@ -155,15 +155,16 @@ h3 {
 }
 
 .hero-subtitle {
-    margin-bottom: 16px;
-    font-size: clamp(1.55rem, 6vw, 3.1rem);
+    max-width: 700px;
+    margin-bottom: 18px;
+    font-size: clamp(2.35rem, 5vw, 4.25rem);
     font-family: var(--serif);
-    line-height: 1.1;
+    line-height: 1.02;
 }
 
 .hero-description {
-    max-width: 620px;
-    margin-bottom: 28px;
+    max-width: 660px;
+    margin-bottom: 30px;
     color: #494949;
     font-size: 1.06rem;
 }
@@ -183,10 +184,11 @@ h3 {
     background: var(--ink);
     color: var(--white);
     font: inherit;
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     font-weight: 800;
     text-align: center;
     cursor: default;
+    white-space: nowrap;
 }
 
 .store-button:disabled {
@@ -201,7 +203,7 @@ h3 {
 
 .hero-visual {
     position: relative;
-    min-height: 520px;
+    min-height: 500px;
     margin: 0;
     border: 1px solid var(--line);
     background: var(--stone);
@@ -484,7 +486,8 @@ h3 {
 
 @media (min-width: 640px) {
     .store-actions {
-        grid-template-columns: repeat(2, minmax(0, 220px));
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        max-width: 560px;
     }
 
     .feature-grid,
@@ -501,8 +504,8 @@ h3 {
     }
 
     .hero {
-        grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
-        padding-top: 56px;
+        grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+        padding-top: 42px;
     }
 
     .editorial-strip {
